@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<div class="posts">
+    <div class="index">
+        <div class="container" style="max-width: 600px">
+            <div class="py-5 text-center">
+                <h2>통합 피드 목록</h2>
+            </div>
+            <hr class="my-4">
+            <form class="form-horizontal" action="/" th:action method="post">
+            <div class="py-5 text-center">
+                <h2>조회 기간 설정</h2>
+                <label for="feed-start">Start date:</label>
+
+                <input type="date" id="feed-start" name="feed-start"
+                       value="2018-01-01"
+                       min="2014-01-01" max="2022-05-31">
+
+                <label for="feed-end">End date:</label>
+                <input type="date" id="feed-end" name="feed-end"
+                       value="2022-01-01"
+                       min="2014-01-01" max="2022-05-31">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        type="submit" formmethod="post">조회</button>
+            </div>
+            </form>
+            <div class="col">
+                <hr class="my-4">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='items.html'"
+                        th:onclick="|location.href='@{/sns/snsLogin}'|"
+                        type="button">메인 페이지로</button>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="py-5 text-center">
+            <h2>피드 목록</h2>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>createdTime</th>
+                <th>message</th>
+                <th>FeedId</th>
+                <th>FeedOwner</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="feed : ${feeds}">
+                <td th:text="${feed.createdTime}"></td>
+                <td th:text="${feed.message}"></td>
+                <td th:text="${feed.feedId}"></td>
+                <td th:text="${feed.feedOwner}"></td>
+            </tr>
+            </tbody>
+        </table>
+    <hr class="my-4">
+
+</div>
+</body>
+</html>

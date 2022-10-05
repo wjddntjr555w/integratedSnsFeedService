@@ -1,0 +1,57 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'dayonglee'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	// OAuth2 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현 시 필요한 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	//webflux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	//JSON
+	implementation 'org.json:json:20220320'
+
+	//JWT
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	//scheduler
+	testImplementation 'org.awaitility:awaitility:4.2.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+bootJar{
+	archivesBaseName = '-'
+	archiveFileName = '-.jar'
+	archiveVersion = '0.0.0'
+}
