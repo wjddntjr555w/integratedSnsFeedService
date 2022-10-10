@@ -38,7 +38,7 @@ out/
 
 
 ### Oauth ###
-# application-oauth.properties
+# # application-oauth.properties
 /src/main/resources/application.properties
 /src/main/resources/keystore.p12
 /src/main/resources/localhost.pem
