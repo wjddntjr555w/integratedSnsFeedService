@@ -1,4 +1,4 @@
-# SnsFeedService
+# IntegratedSnsFeedService
 정우석
 
 
@@ -7,16 +7,13 @@
 
 
 ## 서버 실행
-1. 코드 Download (ZIP파일)
-2. 아래의 디렉토리 이동
-#### SnsFeedService-master
 
-3. 터미널 오픈 후 아래 명령어로 도커 down
-#### docker-compose down
-4. 아래 명령어로 도커 compose 실행 (mysql, spring boot server)
-#### docker-compose up --build
-5. 브라우저에서 아래의 링크로 접속
-#### https://localhost:8080
+1. 터미널 오픈 후 아래 명령어로 도커 down
+
+2. 아래 명령어로 도커 compose 실행 (mysql, spring boot server)
+
+3. 브라우저에서 오픈된 링크로 접속
+
 
 ## 기능
 1. 자체 서비스 유저 회원가입 후 로그인 (SNS로그인 전 서비스 자체의 유저 로그인)

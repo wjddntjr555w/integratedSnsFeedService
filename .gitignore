@@ -42,3 +42,9 @@ out/
 /src/main/resources/application.properties
 /src/main/resources/keystore.p12
 /src/main/resources/localhost.pem
+sql
+SnsFeedService.jar
+#docker
+wait-for-it.sh
+META-INF
+docker-compose.yml
