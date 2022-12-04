@@ -3,6 +3,8 @@ package dayonglee.SnsFeedService.service;
 import dayonglee.SnsFeedService.domain.Feed;
 import dayonglee.SnsFeedService.repository.FeedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class FeedService {
     @Autowired
     private FeedRepository feedRepository;
 
+    public Page<Feed> getFeed(Pageable pageable){
+        return feedRepository.findAll(pageable);
+    }
     public List<Feed> getFeedsBetweenStartDateAndEndDate(Date start, Date end) {
 
         List<Feed> feedsResult = new ArrayList<>();

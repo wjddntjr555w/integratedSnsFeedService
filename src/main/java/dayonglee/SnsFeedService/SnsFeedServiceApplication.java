@@ -10,5 +10,4 @@ public class SnsFeedServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SnsFeedServiceApplication.class, args);
 	}
-
 }

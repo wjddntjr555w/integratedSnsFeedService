@@ -43,7 +43,9 @@ public class FeedController {
         Pageable pageable = PageRequest.of(0,100, sort1);
         Long owner = (Long) httpSession.getAttribute("owner");
 
-        Page<Feed> result = feedRepository.findAll(pageable);
+        Page<Feed> result = feedService.getFeed(pageable);
+        // 컨트롤러에서 바로 Repository에 접근..하면 안된다...
+//        Page<Feed> result = feedRepository.findAll(pageable);
 
         model.addAttribute("feeds",result);
         return "feedIndex";
